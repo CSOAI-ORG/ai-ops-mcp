@@ -1,8 +1,27 @@
 name: ai-ops-mcp
-description: MEOK AI Labs — ai ops
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/ai-ops-mcp
-license: MIT
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: system_health_check
+  description: "Comprehensive system health check \u2014 CPU, memory, disk, services."
+  parameters: []
+- name: check_service
+  description: Check if a specific HTTP service is healthy.
+  parameters:
+  - name: url
+    type: string
+    required: true
+- name: security_scan
+  description: "Run security scan \u2014 check for common vulnerabilities, open ports,\
+    \ outdated packages."
+  parameters:
+  - name: target
+    type: string
+    required: false
+- name: get_process_status
+  description: Get status of running AI-related processes.
+  parameters: []
+- name: maintenance_schedule
+  description: Get recommended maintenance actions based on system state.
+  parameters: []

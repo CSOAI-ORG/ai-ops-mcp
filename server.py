@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """AI Ops MCP — MEOK AI Labs. System monitoring, maintenance, neural retraining, security hardening."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json, os, subprocess, time, platform
 from datetime import datetime, timezone
 from typing import Optional
@@ -17,8 +22,12 @@ def _rl(c="anon"):
 mcp = FastMCP("ai-ops", instructions="MEOK AI Labs — AI Operations. System monitoring, health checks, maintenance scheduling, security hardening.")
 
 @mcp.tool()
-def system_health_check() -> str:
+def system_health_check(api_key: str = "") -> str:
     """Comprehensive system health check — CPU, memory, disk, services."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     import shutil
     disk = shutil.disk_usage("/")
@@ -44,24 +53,32 @@ def system_health_check() -> str:
             services[name] = "DOWN"
     checks["services"] = services
     checks["healthy"] = all(v == "UP" for v in services.values())
-    return json.dumps(checks, indent=2)
+    return checks
 
 @mcp.tool()
-def check_service(url: str) -> str:
+def check_service(url: str, api_key: str = "") -> str:
     """Check if a specific HTTP service is healthy."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     import urllib.request
     try:
         start = time.time()
         req = urllib.request.urlopen(url, timeout=5)
         latency = round((time.time() - start) * 1000, 1)
-        return json.dumps({"url": url, "status": req.status, "latency_ms": latency, "healthy": req.status == 200}, indent=2)
+        return {"url": url, "status": req.status, "latency_ms": latency, "healthy": req.status == 200}
     except Exception as e:
-        return json.dumps({"url": url, "status": "error", "error": str(e), "healthy": False}, indent=2)
+        return {"url": url, "status": "error", "error": str(e), "healthy": False}
 
 @mcp.tool()
-def security_scan(target: str = "system") -> str:
+def security_scan(target: str = "system", api_key: str = "") -> str:
     """Run security scan — check for common vulnerabilities, open ports, outdated packages."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     findings = []
     # Check for common security issues
@@ -80,12 +97,16 @@ def security_scan(target: str = "system") -> str:
                         findings.append({"type": "critical", "issue": f"API key in {path}", "severity": "high"})
                 except: pass
         if len(findings) > 10: break
-    return json.dumps({"target": target, "findings": findings[:20], "total": len(findings),
-        "critical": sum(1 for f in findings if f["severity"] == "high")}, indent=2)
+    return {"target": target, "findings": findings[:20], "total": len(findings),
+        "critical": sum(1 for f in findings if f["severity"] == "high")}
 
 @mcp.tool()
-def get_process_status() -> str:
+def get_process_status(api_key: str = "") -> str:
     """Get status of running AI-related processes."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     try:
         result = subprocess.run(["ps", "aux"], capture_output=True, text=True, timeout=5)
@@ -96,13 +117,17 @@ def get_process_status() -> str:
                 parts = line.split()
                 if len(parts) >= 11:
                     ai_procs.append({"pid": parts[1], "cpu": parts[2], "mem": parts[3], "command": " ".join(parts[10:])[:80]})
-        return json.dumps({"processes": ai_procs[:20], "total": len(ai_procs)}, indent=2)
+        return {"processes": ai_procs[:20], "total": len(ai_procs)}
     except Exception as e:
-        return json.dumps({"error": str(e)}, indent=2)
+        return {"error": str(e)}
 
 @mcp.tool()
-def maintenance_schedule() -> str:
+def maintenance_schedule(api_key: str = "") -> str:
     """Get recommended maintenance actions based on system state."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     import shutil
     disk = shutil.disk_usage("/")
@@ -112,7 +137,7 @@ def maintenance_schedule() -> str:
     actions.append({"priority": "medium", "action": "Rotate logs", "detail": "Clear /tmp/*.log files older than 7 days"})
     actions.append({"priority": "low", "action": "Update packages", "detail": "pip/npm outdated packages"})
     actions.append({"priority": "medium", "action": "Database vacuum", "detail": "VACUUM PostgreSQL tables"})
-    return json.dumps({"timestamp": datetime.now(timezone.utc).isoformat(), "actions": actions}, indent=2)
+    return {"timestamp": datetime.now(timezone.utc).isoformat(), "actions": actions}
 
 if __name__ == "__main__":
     mcp.run()

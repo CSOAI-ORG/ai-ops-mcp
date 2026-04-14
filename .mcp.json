@@ -1,1 +1,62 @@
-{"name":"ai-ops-mcp","vendor":"MEOK AI Labs","homepage":"https://meok.ai","repository":"https://github.com/CSOAI-ORG/ai-ops-mcp","runtime":"python","entrypoint":"server.py"}
+{
+  "name": "ai-ops-mcp",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "system_health_check",
+      "description": "Comprehensive system health check \u2014 CPU, memory, disk, services.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "check_service",
+      "description": "Check if a specific HTTP service is healthy.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "security_scan",
+      "description": "Run security scan \u2014 check for common vulnerabilities, open ports, outdated packages.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_process_status",
+      "description": "Get status of running AI-related processes.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "maintenance_schedule",
+      "description": "Get recommended maintenance actions based on system state.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ]
+}
