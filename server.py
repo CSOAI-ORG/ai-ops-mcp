@@ -89,8 +89,7 @@ def get_process_status() -> str:
     if err := _rl(): return err
     try:
         result = subprocess.run(["ps", "aux"], capture_output=True, text=True, timeout=5)
-        lines = result.stdout.split("
-")
+        lines = result.stdout.split("\n")
         ai_procs = []
         for line in lines:
             if any(k in line.lower() for k in ["python", "node", "ollama", "uvicorn", "gunicorn"]):
