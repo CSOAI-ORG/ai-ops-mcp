@@ -1,0 +1,8 @@
+name: ai-ops-mcp
+description: MEOK AI Labs — ai ops
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/ai-ops-mcp
+license: MIT
+runtime: python
+entrypoint: server.py
