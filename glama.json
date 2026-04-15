@@ -1,0 +1,10 @@
+{
+  "name": "ai-ops-mcp",
+  "description": "MEOK AI Labs \u2014 ai-ops-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/ai-ops-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}

@@ -22,3 +22,6 @@ Repository = "https://github.com/CSOAI-ORG/ai-ops-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
 only-include = ["server.py"]
+
+[project.scripts]
+ai_ops_mcp = "server:main"
