@@ -1,6 +1,6 @@
 {
   "name": "ai-ops-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs \u2014 AI Operations. System monitoring, health checks, maintenance scheduling, security har",
+  "description": "Ai Ops MCP server. Tools: system health check, check service, security scan. Built by MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
