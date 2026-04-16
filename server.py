@@ -49,7 +49,7 @@ def system_health_check(api_key: str = "") -> str:
             s.connect(("127.0.0.1", port))
             s.close()
             services[name] = "UP"
-        except:
+        except Exception as e:
             services[name] = "DOWN"
     checks["services"] = services
     checks["healthy"] = all(v == "UP" for v in services.values())
@@ -95,7 +95,7 @@ def security_scan(target: str = "system", api_key: str = "") -> str:
                     content = open(path).read()
                     if "sk_live_" in content or "sk-" in content:
                         findings.append({"type": "critical", "issue": f"API key in {path}", "severity": "high"})
-                except: pass
+                except Exception as e: pass
         if len(findings) > 10: break
     return {"target": target, "findings": findings[:20], "total": len(findings),
         "critical": sum(1 for f in findings if f["severity"] == "high")}
