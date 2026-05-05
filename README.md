@@ -4,7 +4,7 @@
 
 # Ai Ops Mcp
 
-**Immutable audit trails with SHA-256 hash chain verification for compliance certifications**
+**System monitoring, health checks, maintenance scheduling, and security hardening**
 
 [![npm version](https://img.shields.io/npm/v/@meok-ai/ai-ops-mcp)](https://www.npmjs.com/package/@meok-ai/ai-ops-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
