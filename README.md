@@ -1,50 +1,38 @@
-# AI Ops MCP Server
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — System monitoring, health checks, maintenance scheduling, and security hardening
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/ai-ops-mcp)](https://github.com/CSOAI-ORG/ai-ops-mcp/stargazers)
+
+# Ai Ops Mcp
+
+**Immutable audit trails with SHA-256 hash chain verification for compliance certifications**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/ai-ops-mcp)](https://www.npmjs.com/package/@meok-ai/ai-ops-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/ai-ops-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install ai-ops-mcp
+# or
+npm install -g @meok-ai/ai-ops-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install ai-ops-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `system_health_check`
-Comprehensive system health check — CPU, memory, disk, and service status for common AI services.
-
-### `check_service`
-Check if a specific HTTP service is healthy. Returns status code and latency.
-
-**Parameters:**
-- `url` (str): URL to check
-
-### `security_scan`
-Run security scan — check for common vulnerabilities, exposed API keys in .env files, and open ports.
-
-**Parameters:**
-- `target` (str): Scan target (default 'system')
-
-### `get_process_status`
-Get status of running AI-related processes (Python, Node, Ollama, Uvicorn, etc.).
-
-### `maintenance_schedule`
-Get recommended maintenance actions based on system state (disk space, logs, packages, database).
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
