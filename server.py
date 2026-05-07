@@ -23,7 +23,23 @@ mcp = FastMCP("ai-ops", instructions="MEOK AI Labs — AI Operations. System mon
 
 @mcp.tool()
 def system_health_check(api_key: str = "") -> str:
-    """Comprehensive system health check — CPU, memory, disk, services."""
+    """Comprehensive system health check — CPU, memory, disk, services.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -57,7 +73,23 @@ def system_health_check(api_key: str = "") -> str:
 
 @mcp.tool()
 def check_service(url: str, api_key: str = "") -> str:
-    """Check if a specific HTTP service is healthy."""
+    """Check if a specific HTTP service is healthy.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -74,7 +106,23 @@ def check_service(url: str, api_key: str = "") -> str:
 
 @mcp.tool()
 def security_scan(target: str = "system", api_key: str = "") -> str:
-    """Run security scan — check for common vulnerabilities, open ports, outdated packages."""
+    """Run security scan — check for common vulnerabilities, open ports, outdated packages.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -102,7 +150,23 @@ def security_scan(target: str = "system", api_key: str = "") -> str:
 
 @mcp.tool()
 def get_process_status(api_key: str = "") -> str:
-    """Get status of running AI-related processes."""
+    """Get status of running AI-related processes.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
@@ -123,7 +187,23 @@ def get_process_status(api_key: str = "") -> str:
 
 @mcp.tool()
 def maintenance_schedule(api_key: str = "") -> str:
-    """Get recommended maintenance actions based on system state."""
+    """Get recommended maintenance actions based on system state.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
