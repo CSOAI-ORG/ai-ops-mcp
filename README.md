@@ -1,45 +1,59 @@
-[![ai-ops-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/ai-ops-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/ai-ops-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/ai-ops-mcp)](https://pypi.org/project/ai-ops-mcp/)
-
-[![ai-ops-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/ai-ops-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/ai-ops-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/ai-ops-mcp)](https://github.com/CSOAI-ORG/ai-ops-mcp/stargazers)
+# Ai Ops MCP
 
-# Ai Ops Mcp
+**MCP server for ai ops mcp operations**
 
-**System monitoring, health checks, maintenance scheduling, and security hardening**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/ai-ops-mcp)](https://www.npmjs.com/package/@meok-ai/ai-ops-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-ai-ops-mcp)](https://pypi.org/project/meok-ai-ops-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/ai-ops-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Ai Ops MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `system_health_check` | Comprehensive system health check — CPU, memory, disk, services. |
+| `check_service` | Check if a specific HTTP service is healthy. |
+| `security_scan` | Run security scan — check for common vulnerabilities, open ports, outdated packa |
+| `get_process_status` | Get status of running AI-related processes. |
+| `maintenance_schedule` | Get recommended maintenance actions based on system state. |
 
 ## Installation
 
 ```bash
-pip install ai-ops-mcp
-# or
-npm install -g @meok-ai/ai-ops-mcp
+pip install meok-ai-ops-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "ai-ops": {
+      "command": "python",
+      "args": ["-m", "meok_ai_ops_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/ai-ops-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
