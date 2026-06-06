@@ -1,0 +1,9 @@
+# ai-ops-mcp - Auto-trigger Rules
+
+When the user asks about ai ops, use ai-ops-mcp tools: system_health_check, check_service, security_scan, get_process_status, maintenance_schedule
+
+**MCP server for ai ops mcp operations**
+
+Install: `pip install ai-ops-mcp`
+
+By MEOK AI Labs — MIT licensed.

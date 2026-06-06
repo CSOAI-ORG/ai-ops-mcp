@@ -1,0 +1,28 @@
+{
+  "name": "ai-ops-mcp",
+  "title": "Ai Ops Mcp",
+  "description": "Ai Ops MCP server. Tools: system health check, check service, security scan. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "system_health_check"
+    },
+    {
+      "name": "check_service"
+    },
+    {
+      "name": "security_scan"
+    },
+    {
+      "name": "get_process_status"
+    },
+    {
+      "name": "maintenance_schedule"
+    }
+  ]
+}

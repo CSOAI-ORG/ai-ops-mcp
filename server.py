@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""AI Ops MCP — MEOK AI Labs. System monitoring, maintenance, neural retraining, security hardening."""
+"""
+AI Ops MCP — MEOK AI Labs. System monitoring, maintenance, neural retraining, security hardening."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json, os, subprocess, time, platform
@@ -60,7 +60,7 @@ def system_health_check(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     import shutil
@@ -129,7 +129,7 @@ def check_service(url: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     import urllib.request
@@ -181,7 +181,7 @@ def security_scan(target: str = "system", api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     findings = []
@@ -243,7 +243,7 @@ def get_process_status(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     try:
@@ -298,7 +298,7 @@ def maintenance_schedule(api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+        return {"error": msg, "upgrade_url": "https://councilof.ai"}
 
     if err := _rl(): return err
     import shutil
@@ -311,5 +311,8 @@ def maintenance_schedule(api_key: str = "") -> str:
     actions.append({"priority": "medium", "action": "Database vacuum", "detail": "VACUUM PostgreSQL tables"})
     return {"timestamp": datetime.now(timezone.utc).isoformat(), "actions": actions}
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,36 @@
+# ai-ops-mcp
+# **MCP server for ai ops mcp operations**
+
+## Install
+```bash
+pip install ai-ops-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `system_health_check`
+Comprehensive system health check — CPU, memory, disk, services.
+
+### `check_service`
+Check if a specific HTTP service is healthy.
+
+### `security_scan`
+Run security scan — check for common vulnerabilities, open ports, outdated packages.
+
+### `get_process_status`
+Get status of running AI-related processes.
+
+### `maintenance_schedule`
+Get recommended maintenance actions based on system state.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
