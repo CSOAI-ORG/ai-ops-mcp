@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "ai-ops-mcp",
+    "description": "Ai Ops MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "ai-ops-mcp"
+      }
+    ],
+    "capabilities": [
+      "system_health_check",
+      "check_service",
+      "security_scan",
+      "get_process_status",
+      "maintenance_schedule"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "ai-ops-mcp",
+  "description": "Ai Ops MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/ai-ops-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "system_health_check",
+      "name": "System Health Check",
+      "description": "system_health_check via ai-ops-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_service",
+      "name": "Check Service",
+      "description": "check_service via ai-ops-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "security_scan",
+      "name": "Security Scan",
+      "description": "security_scan via ai-ops-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_process_status",
+      "name": "Get Process Status",
+      "description": "get_process_status via ai-ops-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "maintenance_schedule",
+      "name": "Maintenance Schedule",
+      "description": "maintenance_schedule via ai-ops-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
