@@ -4,7 +4,7 @@ description: 'Ai Ops MCP server. Tools: system health check, check service, secu
 version: 1.0.0
 tools:
 - name: system_health_check
-  description: Comprehensive system health check — CPU, memory, disk, services.
+  description: "Comprehensive system health check \u2014 CPU, memory, disk, services."
   parameters: []
 - name: check_service
   description: Check if a specific HTTP service is healthy.
@@ -13,8 +13,8 @@ tools:
     type: string
     required: true
 - name: security_scan
-  description: Run security scan — check for common vulnerabilities, open ports, outdated
-    packages.
+  description: "Run security scan \u2014 check for common vulnerabilities, open ports,\
+    \ outdated packages."
   parameters:
   - name: target
     type: string
@@ -25,3 +25,15 @@ tools:
 - name: maintenance_schedule
   description: Get recommended maintenance actions based on system state.
   parameters: []
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+    - apiKey
+    properties:
+      apiKey:
+        type: string
+        description: Your MEOK API Key
+  commandFunction: "(config) => ({\n  command: 'uvx',\n  args: ['ai-ops-mcp', '--api-key',\
+    \ config.apiKey],\n  env: {\n    MEOK_API_KEY: config.apiKey\n  }\n})"
