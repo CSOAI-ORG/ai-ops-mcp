@@ -4,9 +4,9 @@
   "version": "1.0.9",
   "description": "Ai Ops MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/ai-ops-mcp",
-    "source": "https://github.com/CSOAI-ORG/ai-ops-mcp"
+    "source": "github",
+    "id": "1210245088"
   },
   "packages": [
     {
