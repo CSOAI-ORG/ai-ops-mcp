@@ -1,0 +1,117 @@
+{
+  "name": "Ai Ops Mcp",
+  "version": "1.0.6",
+  "url": "https://mcp.meok.ai/ai-ops-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "Ai Ops MCP server. Tools: system health check, check service, security scan. Built by MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "system_health_check",
+      "name": "System Health Check",
+      "description": "System Health Check — a tool of the ai-ops-mcp MCP.",
+      "tags": [
+        "security",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "check_service",
+      "name": "Check Service",
+      "description": "Check Service — a tool of the ai-ops-mcp MCP.",
+      "tags": [
+        "security",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "security_scan",
+      "name": "Security Scan",
+      "description": "Security Scan — a tool of the ai-ops-mcp MCP.",
+      "tags": [
+        "security",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "get_process_status",
+      "name": "Get Process Status",
+      "description": "Get Process Status — a tool of the ai-ops-mcp MCP.",
+      "tags": [
+        "security",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "maintenance_schedule",
+      "name": "Maintenance Schedule",
+      "description": "Maintenance Schedule — a tool of the ai-ops-mcp MCP.",
+      "tags": [
+        "security",
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "ai-ops-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}
