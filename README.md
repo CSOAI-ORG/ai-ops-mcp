@@ -1,4 +1,4 @@
-<!-- mcp-name: CSOAI-ORG/ai-ops-mcp -->
+<!-- mcp-name: io.github.CSOAI-ORG/ai-ops-mcp -->
 [![MCP Scorecard: 86/100](https://img.shields.io/badge/proofof.ai-86%2F100-5b21b6)](https://proofof.ai/scorecard/ai-ops-mcp.html)
 
 # Ai Ops MCP
@@ -123,3 +123,8 @@ Once configured, ask your assistant, for example:
 - "Use `system_health_check` to …"
 - "Use `check_service` to …"
 - "Use `security_scan` to …"
+
+## See also
+
+MEOK compliance MCP fleet:
+[`accessibility-ai-mcp`](https://github.com/CSOAI-ORG/accessibility-ai-mcp), [`health-check-ai-mcp`](https://github.com/CSOAI-ORG/health-check-ai-mcp), [`healthcare-ai-governance-mcp`](https://github.com/CSOAI-ORG/healthcare-ai-governance-mcp), [`plagiarism-checker-ai-mcp`](https://github.com/CSOAI-ORG/plagiarism-checker-ai-mcp)
